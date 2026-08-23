@@ -1,70 +1,362 @@
-# Getting Started with Create React App
+# 🛒 ShopEase – Full-Stack E-Commerce Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern and responsive **full-stack e-commerce web application** built using **React.js, Django, Python, and SQLite**. ShopEase provides a complete online shopping experience with product browsing, user authentication, shopping cart management, and order processing.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+* 🏠 Responsive e-commerce homepage
+* 🛍️ Product listing and product details
+* 🔎 Product browsing by category
+* 👤 User registration and login
+* 🛒 Add products to shopping cart
+* ➕ Increase/decrease product quantities
+* ❌ Remove products from cart
+* 💰 Automatic cart total calculation
+* 📦 Order creation and processing
+* 🗄️ Product, user, and order database management
+* 🔐 Django-based backend API
+* 📱 Responsive design for different screen sizes
+* 🖼️ Product images using image URLs
+* ⚡ React-based interactive frontend
 
-### `npm start`
+## 🛠️ Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* **React.js**
+* **JavaScript**
+* **HTML5**
+* **CSS3**
+* **Axios**
+* **Vite**
 
-### `npm test`
+### Backend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* **Python**
+* **Django**
+* **Django REST Framework**
 
-### `npm run build`
+### Database
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* **SQLite**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Development Tools
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* **Visual Studio Code**
+* **Git**
+* **GitHub**
 
-### `npm run eject`
+## 📂 Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```text
+ShopEase/
+│
+├── frontend/
+│   ├── public/
+│   │
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── ProductCard.jsx
+│   │   │   └── ...
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Home.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Register.jsx
+│   │   │   ├── Cart.jsx
+│   │   │   ├── ProductDetails.jsx
+│   │   │   └── ...
+│   │   │
+│   │   ├── services/
+│   │   │   └── api.js
+│   │   │
+│   │   ├── context/
+│   │   │   └── CartContext.jsx
+│   │   │
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── package.json
+│   └── vite.config.js
+│
+├── backend/
+│   ├── ecommerce/
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── ...
+│   │
+│   ├── store/
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── views.py
+│   │   ├── urls.py
+│   │   ├── admin.py
+│   │   └── management/
+│   │       └── commands/
+│   │           └── seed_products.py
+│   │
+│   ├── manage.py
+│   └── db.sqlite3
+│
+└── README.md
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ⚙️ Installation and Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1. Clone the Repository
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/your-username/ShopEase.git
+cd ShopEase
+```
 
-## Learn More
+### 2. Set Up the Django Backend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Navigate to the backend:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+cd backend
+```
 
-### Code Splitting
+Create a virtual environment:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+python -m venv venv
+```
 
-### Analyzing the Bundle Size
+Activate it on Windows:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+venv\Scripts\activate
+```
 
-### Making a Progressive Web App
+Install the required packages:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+pip install django djangorestframework django-cors-headers
+```
 
-### Advanced Configuration
+### 3. Apply Database Migrations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
 
-### Deployment
+### 4. Add Sample Products
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The project includes a Django management command for adding sample products:
 
-### `npm run build` fails to minify
+```bash
+python manage.py seed_products
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This automatically adds **30 products** to the database.
+
+### 5. Create an Admin Account
+
+```bash
+python manage.py createsuperuser
+```
+
+Follow the instructions to create your administrator account.
+
+### 6. Start the Django Server
+
+```bash
+python manage.py runserver
+```
+
+The backend will run at:
+
+```text
+http://127.0.0.1:8000/
+```
+
+The Django administration panel is available at:
+
+```text
+http://127.0.0.1:8000/admin/
+```
+
+---
+
+## 💻 Frontend Setup
+
+Open another terminal and navigate to the frontend:
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the React development server:
+
+```bash
+npm run dev
+```
+
+Vite will provide a local URL, for example:
+
+```text
+http://localhost:5175/
+```
+
+Open that URL in your browser.
+
+---
+
+## 🔄 Application Workflow
+
+```text
+             ┌────────────────────┐
+             │     React.js       │
+             │     Frontend       │
+             └─────────┬──────────┘
+                       │
+                       │ Axios / REST API
+                       ▼
+             ┌────────────────────┐
+             │      Django        │
+             │    REST API        │
+             └─────────┬──────────┘
+                       │
+                       ▼
+             ┌────────────────────┐
+             │      SQLite        │
+             │     Database       │
+             └────────────────────┘
+```
+
+Users can browse products through the React interface, add products to their cart, authenticate through the Django backend, and place orders. Django manages the application data and database operations.
+
+## 🗄️ Database Models
+
+The backend contains database models for managing:
+
+### Product
+
+Stores:
+
+* Product name
+* Description
+* Price
+* Category
+* Image URL
+* Stock
+* Creation date
+* Updated date
+
+### User
+
+Handles:
+
+* Username
+* Email
+* Password
+* Authentication
+
+### Order
+
+Handles:
+
+* Customer
+* Ordered products
+* Quantity
+* Total price
+* Order status
+* Order date
+
+## 🔌 API Structure
+
+Example API endpoints include:
+
+```text
+GET  /api/products/
+GET  /api/products/<id>/
+
+POST /api/auth/register/
+POST /api/auth/login/
+
+GET  /api/orders/
+POST /api/orders/create/
+```
+
+The React frontend communicates with these Django REST API endpoints using Axios.
+
+## 🛒 Shopping Cart
+
+The shopping cart allows users to:
+
+* Add products
+* Remove products
+* Increase quantity
+* Decrease quantity
+* View individual product prices
+* Calculate the total amount
+* Proceed toward checkout
+
+## 👨‍💼 Django Admin
+
+Administrators can manage the store through Django Admin.
+
+```text
+http://127.0.0.1:8000/admin/
+```
+
+The admin interface can be used to:
+
+* Add products
+* Edit products
+* Delete products
+* Manage stock
+* Manage users
+* View orders
+
+## 🎯 Project Objectives
+
+The main objective of ShopEase is to demonstrate the development of a **full-stack e-commerce application** by integrating a modern React frontend with a Django REST backend and relational database.
+
+The project demonstrates practical knowledge of:
+
+* Frontend development
+* Backend development
+* REST API integration
+* Database management
+* Authentication
+* CRUD operations
+* State management
+* E-commerce workflows
+* Responsive web design
+
+## 🔮 Future Enhancements
+
+Possible future improvements include:
+
+* 💳 Online payment gateway
+* ❤️ Wishlist functionality
+* 🔍 Advanced product search
+* ⭐ Product reviews and ratings
+* 📧 Order confirmation emails
+* 📱 Mobile application
+* 📊 Admin sales dashboard
+* 🔔 Order notifications
+* 📦 Order tracking
+* 🌙 Dark mode
+* 🧾 Downloadable invoices
+
+## 👨‍💻 Author
+
+**Vijith Juvviguntla**
+
+This project was developed as a full-stack web development project to demonstrate practical implementation of **React.js, Django, REST APIs, and database management**.
+
+## 📄 License
+
+This project is intended for **educational and learning purposes**.
